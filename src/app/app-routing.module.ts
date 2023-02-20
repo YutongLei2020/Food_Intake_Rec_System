@@ -21,6 +21,18 @@ const routes: Routes = [
   {
     path: 'recommendation',
     loadChildren: () => import('./recommendation/recommendation.module').then( m => m.RecommendationPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'recommendation-page1',
+    loadChildren: () => import('./recommendation-page1/recommendation-page1.module').then( m => m.RecommendationPage1PageModule)
+  },
+  {
+    path: 'recommendation-page2',
+    loadChildren: () => import('./recommendation-page2/recommendation-page2.module').then( m => m.RecommendationPage2PageModule)
   }
 ];
 @NgModule({
