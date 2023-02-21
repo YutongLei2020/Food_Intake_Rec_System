@@ -24,10 +24,18 @@
     padding: 8px;
   }
   
-  .flex-container {
+  .flex-container1 {
+    display: flex;
+  }
+
+  .flex-container2 {
     display: flex;
   }
   
+  .flex-container3 {
+    display: flex;
+  }
+
   #foodType1{
     margin-top: 7%;
   }
@@ -36,12 +44,20 @@
     margin-top: 4%;
   }
   .veg {background-color: #04AA6D;} /* Green */
-  #vege{
+  #vegtag{
     margin-top: 7%;
     margin-left: 5%;
   }
   .fruit {background-color: #2196F3;} /* Blue */
-  .Meat {background-color: #ff9800;} /* Orange */
+  #fruittag{
+    margin-top: 7%;
+    margin-left: 5%;
+  }
+  .meat {background-color: #ff9800;} /* Orange */
+  #meattag{
+    margin-top: 7%;
+    margin-left: 5%;
+  }
   
   #warning1 {
     color: red;
