@@ -1,9 +1,69 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>history</ion-title>
+    <ion-title>Meal History</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Choose a date to see a meal history or plan:</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime" presentation="date"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Lunch</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item>-</ion-item>
+        <ion-item>-</ion-item>
+        <ion-item>-</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Dinner</ion-card-title>
+      <ion-button>New</ion-button>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item>-</ion-item>
+        <ion-item>-</ion-item>
+        <ion-item>-</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Calories</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item>Calories consumed: _____Cal</ion-item>
+        <ion-item>Calories burned: _____Cal</ion-item>
+        <ion-item>Calories goal: _____Cal</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
