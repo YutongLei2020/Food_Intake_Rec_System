@@ -5,5 +5,91 @@
 </ion-header>
 
 <ion-content>
+  <div>
+    <!-- <p id="rcorners1">
+      Lunch
+    </p> -->
 
+    <ion-card-header class="center">
+      <ion-card-title>
+        Recommendation
+      </ion-card-title>
+    </ion-card-header>
+
+    <!-- <ul class="heros">
+      <ion-list *ngFor="let recs of HomeCompoent">
+        <p>{{recs.dish}}</p>
+      </ion-list>
+    </ul> -->
+  
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Lunch
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <app-recs></app-recs>
+        <!-- <ion-list>
+          <ion-item>
+            1.
+          </ion-item>
+
+          <ion-item>
+            2.
+          </ion-item>
+
+          <ion-item>
+            3.
+          </ion-item>
+        </ion-list> -->
+      </ion-card-content>
+      <ion-button fill="outline" class="center_button"  id="bnconfirm" (click)="confirm()">
+        Confirm
+      </ion-button>
+    </ion-card>
+    <!-- <p class="a">
+      1
+      2
+      3
+    </p> -->
+
+    
+  
+  
+    
+  </div>
+  
+
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Calorie
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            Consumed:
+          </ion-item>
+
+          <ion-item>
+            Burned:
+          </ion-item>
+
+          <ion-item>
+            Goal:
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <!-- <p id="calorie">
+      <title>
+        Calorie Count
+      </title>
+    </p> -->
+  </div>
+  
 </ion-content>
+

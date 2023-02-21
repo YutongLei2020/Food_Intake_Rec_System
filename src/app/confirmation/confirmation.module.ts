@@ -4,20 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { ConfirmationPageRoutingModule } from './confirmation-routing.module';
 
-import { HomePage } from './home.page';
-
-import { RecsComponent } from '../recs/recs.component';
+import { ConfirmationPage } from './confirmation.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    ConfirmationPageRoutingModule
   ],
-  declarations: [HomePage, RecsComponent]
+  declarations: [ConfirmationPage]
 })
-export class HomePageModule {
-}
+export class ConfirmationPageModule {}

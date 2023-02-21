@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
+        path: 'confirmation',
+        loadChildren: () => import('../confirmation/confirmation.module').then(m => m.ConfirmationPageModule)
+      },
+      {
         path: 'recommendation',
         loadChildren: () => import('../recommendation/recommendation.module').then(m => m.RecommendationPageModule)
       },

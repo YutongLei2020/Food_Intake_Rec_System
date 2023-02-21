@@ -1,0 +1,76 @@
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 150px;
+    height: 65px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+  }
+
+#rcorners1 {
+    text-align: center;
+}
+
+#calorie {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar{
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track{
+    border: 1px solid yellow;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: yellowgreen;
+    border-radius: 10px;
+    }
+    
+::-webkit-scrollbar-thumb:hover {
+background: #88ba1c;
+}
+
+  
+
+
+.center {
+    // margin: 0 auto;
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    // justify-content: center;
+    text-align: center;
+}
+
+.center_button {
+    margin: 0 auto;
+    display: block;
+    width: 40%;
+    margin-bottom: 3%;
+    // margin-left: auto;
+    // margin-right: auto;
+    // justify-content: center;
+    //text-align: center;
+}
+
+p.a {
+    text-align-last: center;
+}
