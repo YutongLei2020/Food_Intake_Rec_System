@@ -1,9 +1,138 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>recommendationPage2</ion-title>
+    <ion-title>recommendation</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- https://ionicframework.com/docs/api/infinite-scroll -->
+  <!-- back button needed? <ion-nav [root]="component"></ion-nav> -->
+  <!-- survey use checkbox -->
+  <!-- discuss about the lunch/dinner design? -->
+
+
+
+  <form id="drag1">
+    <!-- time drag down -->
+    <div>
+      <!-- <label>Time:</label>
+      <select>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+          <option>Others</option>
+      </select> -->
+      <ion-list>
+        <ion-item>
+          <ion-select placeholder="Select Time">
+            <ion-select-option>Breakfast</ion-select-option>
+            <ion-select-option>Lunch</ion-select-option>
+            <ion-select-option>Dinner</ion-select-option>
+            <ion-select-option>Others</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <!-- restaurant drag down -->
+    <div id="restaurant">
+    <!-- option1 -->
+      <label>Restaurant:</label>
+      <input list="restaurants">
+      <datalist id="restaurants">
+        <option value="R1"></option>
+        <option value="R2"></option>
+        <option value="R3"></option>
+        <option value="R4"></option>
+      </datalist>
+
+    <!-- option2 -->
+      <!-- <label>Restaurant:</label>
+      <select>
+          <option>R1</option>
+          <option>R2</option>
+          <option>R3</option>
+          <option>R4</option>
+      </select> -->
+    </div>
+    <div class="flex-container" id="foodType1">
+      <div>
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Food 1">
+              <ion-select-option>F1</ion-select-option>
+              <ion-select-option>F2</ion-select-option>
+              <ion-select-option>F3</ion-select-option>
+              <ion-select-option>F4</ion-select-option>
+              <ion-select-option>F5</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div id="vege">
+        <span class="veg">Vegetables</span>
+      </div>
+    </div>
+
+    <div id="foodType2">
+      <label>Food 2:</label>
+      <select>
+          <option>F1</option>
+          <option>F2</option>
+          <option>F3</option>
+          <option>F4</option>
+          <option>F5</option>
+      </select>
+      <span class="fruit">Fruit</span>
+    </div>
+    
+    <div id="foodType3">
+      <label>Food 3:</label>
+      <select>
+          <option>F1</option>
+          <option>F2</option>
+          <option>F3</option>
+          <option>F4</option>
+          <option>F5</option>
+      </select>
+      <span class="Meat">Meat</span>
+    </div>
+
+    <!-- piechart missing -->
+
+    <div id="warning1">
+      <p>
+        PieChart Warning
+      </p>
+    </div>
+
+    <p>
+      Calories: ??? cal
+    </p>
+
+    <div id="warning1">
+      <p>
+        Calories Warning
+      </p>
+    </div>
+
+  </form>
+  
+
+  <!-- <div id="warning1">
+    <p>
+      PieChart Warning
+    </p>
+  </div> -->
+
+  <!-- <span class="label success">Success</span>
+  <span class="label info">Info</span>
+  <span class="label warning">Warning</span> -->
+
+  <div id="button1">
+
+    <!-- button unfinished -->
+    <ion-button>Add</ion-button>
+    <ion-button>Save</ion-button>
+  </div>
 
 </ion-content>

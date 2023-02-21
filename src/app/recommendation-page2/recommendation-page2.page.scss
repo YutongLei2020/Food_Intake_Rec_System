@@ -1,0 +1,70 @@
+// div.relative {
+//     position: relative;
+//     top: 30px;
+//     border: 3px solid #73AD21;
+//   }
+
+#drag1{
+    margin-top: 7%;
+    //margin-left: 5%;
+    height: 400px;
+    width: 200px;
+  }
+  
+  option{
+    font-size: small;
+  }
+  
+  #restaurant{
+    margin-top: 7%;
+  }
+  
+  .label {
+    color: white;
+    padding: 8px;
+  }
+  
+  .flex-container {
+    display: flex;
+  }
+  
+  #foodType1{
+    margin-top: 7%;
+  }
+  
+  #foodType2,#foodType3{
+    margin-top: 4%;
+  }
+  .veg {background-color: #04AA6D;} /* Green */
+  #vege{
+    margin-top: 7%;
+    margin-left: 5%;
+  }
+  .fruit {background-color: #2196F3;} /* Blue */
+  .Meat {background-color: #ff9800;} /* Orange */
+  
+  #warning1 {
+    color: red;
+    background-color: rgb(255, 255, 255);
+    //height: 90px;
+    width: 120px;
+    border: 5px solid rgb(0, 0, 0);
+    //padding: 2px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  
+  #button1{
+    margin-top: 25%;
+  }
+  
+  // ion-label{
+  //   font-size: 200px;
+  // }
+  
+  .ion-padding{
+    font-size: 15px;
+  }
+  
+  
