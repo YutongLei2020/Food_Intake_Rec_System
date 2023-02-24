@@ -1,10 +1,18 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button text="Previous" icon="caret-back"></ion-back-button> -->
+      <ion-button id="bnback" (click)="back()">
+        Back
+      </ion-button>
+    </ion-buttons>
     <ion-title>Recommendation</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <body>
+
   <!-- https://ionicframework.com/docs/api/infinite-scroll -->
   <!-- back button needed? <ion-nav [root]="component"></ion-nav> -->
   <!-- survey use checkbox -->
@@ -149,5 +157,6 @@
     <ion-button>Add</ion-button>
     <ion-button>Save</ion-button>
   </div>
+  </body>
 
 </ion-content>

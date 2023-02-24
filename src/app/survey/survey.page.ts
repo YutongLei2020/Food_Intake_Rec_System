@@ -18,4 +18,9 @@ export class SurveyPage implements OnInit {
   ngOnInit() {
   }
 
+  back()
+  {
+    this.router.navigate(['/tabs/profile'])
+  }
+
 }
