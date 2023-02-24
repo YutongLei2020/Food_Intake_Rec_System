@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>confirmation</ion-title>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button text="Previous" icon="caret-back"></ion-back-button> -->
+      <ion-button id="bnback" (click)="back()">
+        Back
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="center">confirmation</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -75,6 +81,7 @@
         </div>
       </ion-card-content>
     </ion-card>
+  
   </div>
 
 <ion-button fill="outline" class="center_button"  id="bnconfirm" (click)="confirm()">
