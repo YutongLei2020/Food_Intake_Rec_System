@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Survey</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>For us to know you better:</h2>
+
+  <ion-list>
+    <h3>Personal Information</h3>
+
+    <ion-item>
+      <ion-label>Name: </ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+    <ion-item>Gender:
+      <ion-select placeholder="Select Gender">
+        <ion-select-option>Woman</ion-select-option>
+        <ion-select-option>Man</ion-select-option>
+        <ion-select-option>Non-binary/non-conforming</ion-select-option>
+        <ion-select-option>Prefer not to respond</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>Birthday: 
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="datetime" presentation="date"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Height: </ion-label>
+      <ion-input></ion-input>
+      <ion-label>feet(ft)</ion-label>
+      <ion-input></ion-input>
+      <ion-label>inches(in)</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Weight: </ion-label>
+      <ion-input></ion-input>
+      <ion-label>lbs</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input type="email" placeholder="your_email@gmail.com"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Telephone: </ion-label>
+      <ion-input type="tel" placeholder="888-888-8888"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+
+  <h3>Food Information</h3>
+
+  <ion-card>
+    <ion-card-header>
+      <h5>Food Preference</h5>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-select placeholder="Select Food Preference">
+          <ion-select-option>American Food</ion-select-option>
+          <ion-select-option>Mexican Food</ion-select-option>
+          <ion-select-option>Chinese Food</ion-select-option>
+          <ion-select-option>Japanese Food</ion-select-option>
+          <ion-select-option>Thai Food</ion-select-option>
+          <ion-select-option>Korean Food</ion-select-option>
+          <ion-select-option>Vietnamese Food</ion-select-option>
+          <ion-select-option>French Food</ion-select-option>
+          <ion-select-option>Brunch</ion-select-option>
+          <ion-select-option>Fast Food</ion-select-option>
+          <ion-select-option>Raw Food</ion-select-option>
+          <ion-select-option>BBQ</ion-select-option>
+          <ion-select-option>Rice</ion-select-option>
+          <ion-select-option>Ramen</ion-select-option>
+          <ion-select-option>Sushi</ion-select-option>
+          <ion-select-option>Dim Sum</ion-select-option>
+          <ion-select-option>Guilin Rice Noodle</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h5>Allergies:</h5>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-select placeholder="Select Allergies">
+          <ion-select-option>American Food</ion-select-option>
+          <ion-select-option>Mexican Food</ion-select-option>
+          <ion-select-option>Chinese Food</ion-select-option>
+          <ion-select-option>Japanese Food</ion-select-option>
+          <ion-select-option>Thai Food</ion-select-option>
+          <ion-select-option>Korean Food</ion-select-option>
+          <ion-select-option>Vietnamese Food</ion-select-option>
+          <ion-select-option>French Food</ion-select-option>
+          <ion-select-option>Brunch</ion-select-option>
+          <ion-select-option>Fast Food</ion-select-option>
+          <ion-select-option>Raw Food</ion-select-option>
+          <ion-select-option>BBQ</ion-select-option>
+          <ion-select-option>Rice</ion-select-option>
+          <ion-select-option>Ramen</ion-select-option>
+          <ion-select-option>Sushi</ion-select-option>
+          <ion-select-option>Dim Sum</ion-select-option>
+          <ion-select-option>Guilin Rice Noodle</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <h5>Calories Goal</h5>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>    
+        <ion-input placeholder="For example: 2000"></ion-input>
+        <ion-label>Cal/Day</ion-label>
+      </ion-item>
+      <ion-item>    
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Use Recommendation</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" id="profile" (click)="openProfile()">Save</ion-button>
+
+
+
+</ion-content>

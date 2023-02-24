@@ -16,4 +16,9 @@ export class ConfirmationPage implements OnInit {
   {
     this.router.navigate(['/tabs/home'])
   }
+
+  back()
+  {
+    this.router.navigate(['/tabs/home'])
+  }
 }
