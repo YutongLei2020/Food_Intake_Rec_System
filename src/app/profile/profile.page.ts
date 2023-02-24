@@ -13,6 +13,11 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
   }
 
+  openSurvey()
+  {
+    this.router.navigate(['/tabs/survey'])
+  }
+
   logOut()
   {
     this.router.navigate([''])
