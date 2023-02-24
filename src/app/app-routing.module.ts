@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'confirmation',
     loadChildren: () => import('./confirmation/confirmation.module').then( m => m.ConfirmationPageModule)
+  },
+  {
+    path: 'survey',
+    loadChildren: () => import('./survey/survey.module').then( m => m.SurveyPageModule)
   }
 ];
 @NgModule({
