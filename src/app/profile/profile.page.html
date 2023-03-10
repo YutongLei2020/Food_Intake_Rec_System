@@ -6,22 +6,27 @@
 
 <ion-content>
   <body>
-    <div>
-      <ion-avatar>
-        <img alt="own picture" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      </ion-avatar>
+    <ion-card>
+      <div>
+        <ion-avatar>
+          <img alt="own picture" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        </ion-avatar>
 
-      <div id="vertical_line"></div>
-      
-      <ion-header id="name">Name</ion-header>
-    </div>
+        <div id="vertical_line"></div>
+        
+        <ion-header id="name">Name</ion-header>
+      </div>
+    </ion-card>
 
-    <div>
-      <ion-button expand="block" id="profile" (click)="openSurvey()">Profile</ion-button>
-      <ion-button expand="block" id="logout" (click)="logOut()">Logout</ion-button>
-      <ion-button expand="block" id="help">Help</ion-button>
-    </div>
-    
+    <ion-card>
+      <div>
+        <br><br><br>
+        <ion-button expand="block" id="profile" (click)="openSurvey()">Survey</ion-button>
+        <ion-button expand="block" id="logout" (click)="logOut()">Logout</ion-button>
+        <ion-button expand="block" id="help">Help</ion-button>
+        <br><br><br>
+      </div>
+    </ion-card>
     <div>
       <p>version 1.0.0</p>
     </div>

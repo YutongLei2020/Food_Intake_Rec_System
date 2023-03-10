@@ -4,83 +4,93 @@ body {
 
 }
 
+
 #drag1{
-    margin-top: 7%;
-    margin-left: 25%;
-    height: 400px;
-    width: 200px;
-  }
-  
-  option{
-    font-size: small;
-  }
-  
-  #restaurant{
-    margin-top: 7%;
-  }
-  
-  .label {
-    color: white;
-    padding: 8px;
-  }
-  
-  .flex-container1 {
-    display: flex;
-  }
+  margin-top: 7%;
+  // margin-left: 25%;
+  // height: 400px;
+  // width: 200px;
+}
 
-  .flex-container2 {
-    display: flex;
-  }
-  
-  .flex-container3 {
-    display: flex;
-  }
+selectTime{
+  width: 20%;
+}
 
-  #foodType1{
-    margin-top: 7%;
-  }
-  
-  #foodType2,#foodType3{
-    margin-top: 4%;
-  }
-  .veg {background-color: #04AA6D;} /* Green */
-  #vegtag{
-    margin-top: 7%;
-    margin-left: 5%;
-  }
-  .fruit {background-color: #2196F3;} /* Blue */
-  #fruittag{
-    margin-top: 7%;
-    margin-left: 5%;
-  }
-  .meat {background-color: #ff9800;} /* Orange */
-  #meattag{
-    margin-top: 7%;
-    margin-left: 5%;
-  }
-  
-  #warning1 {
-    color: red;
-    background-color: rgb(255, 255, 255);
-    //height: 90px;
-    width: 120px;
-    border: 5px solid rgb(0, 0, 0);
-    //padding: 2px;
-    margin: 10px;
-    text-align: center;
-  }
-  
-  
-  #button1{
-    margin-top: 25%;
-  }
-  
-  // ion-label{
-  //   font-size: 200px;
-  // }
-  
-  .ion-padding{
-    font-size: 15px;
-  }
-  
+option{
+  font-size: small;
+}
+
+#restaurant{
+  margin-top: 7%;
+}
+
+.label {
+  color: white;
+  padding: 8px;
+}
+
+.flex-container1 {
+  display: flex;
+}
+
+.flex-container2 {
+  display: flex;
+}
+
+.flex-container3 {
+  display: flex;
+}
+
+#foodType1{
+  margin-top: 7%;
+}
+
+#foodType2,#foodType3{
+  margin-top: 4%;
+}
+.veg {background-color: #04AA6D;} /* Green */
+#vegtag{
+  margin-top: 3%;
+  margin-left: 5%;
+}
+.fruit {background-color: #2196F3;} /* Blue */
+#fruittag{
+  margin-top: 3%;
+  margin-left: 5%;
+}
+.meat {background-color: #ff9800;} /* Orange */
+#meattag{
+  margin-top: 3%;
+  margin-left: 5%;
+}
+
+#warning {
+  height: 200px;
+}
+
+#warning1 {
+  color: red;
+  background-color: rgb(255, 255, 255);
+  //height: 90px;
+  width: 120px;
+  border: 5px solid rgb(0, 0, 0);
+  //padding: 2px;
+  margin: 10px;
+  margin-left: 30%;
+  text-align: center;
+}
+
+// ion-label{
+//   font-size: 200px;
+// }
+
+.ion-padding{
+  font-size: 15px;
+}
+
+
+
+#save{
+  margin-left: 40%;
+}
   
