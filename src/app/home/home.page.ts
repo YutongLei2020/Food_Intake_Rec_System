@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
 
   confirm()
   {
-    this.router.navigate(['/tabs/confirmation'])
+    this.router.navigate(['/confirmation'])
   }
 
 }

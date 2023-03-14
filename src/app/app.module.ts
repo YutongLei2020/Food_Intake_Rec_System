@@ -6,12 +6,16 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule }    from '@angular/common/http';
+//import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
 //import { RecsComponent } from './recs/recs.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HttpClient, FormBuilder],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
