@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ConfirmationPageRoutingModule } from './confirmation-routing.module';
 
 import { ConfirmationPage } from './confirmation.page';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ConfirmationPageRoutingModule
+    ConfirmationPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [ConfirmationPage]
 })

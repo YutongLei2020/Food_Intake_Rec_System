@@ -4,6 +4,7 @@ import { RECS } from '../mock-recs';
 import { UserService } from '../api/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ModalController, NavController, Platform } from '@ionic/angular';
+import { RecommendationPage2Page } from '../recommendation-page2/recommendation-page2.page';
 
 @Component({
   selector: 'app-recs',
@@ -12,11 +13,11 @@ import { ModalController, NavController, Platform } from '@ionic/angular';
 })
 export class RecsComponent implements OnInit {
 
-  recs_names: any;
+  recs_names = RecommendationPage2Page.curr_foods;
+  restaurant = RecommendationPage2Page.curr_restaurant;
 
   constructor(public userService:UserService, private formBuilder: FormBuilder,
     private modalContriller: ModalController, private navCtrl: NavController, private plt: Platform) { 
-      this.loadRec()
     }
 
   ngOnInit() {}
@@ -32,7 +33,7 @@ export class RecsComponent implements OnInit {
       //   this.recs_names = return_data['rec_names']
       // }
       console.log('Recommendation load');
-      this.recs_names = return_data
+      //this.recs_names = return_data
       //this.recs_names = this.recs_names['dishes']
     });
   }
