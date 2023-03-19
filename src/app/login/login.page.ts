@@ -3,6 +3,11 @@ import { Router } from '@angular/router'
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FirebaseError } from '@firebase/util'
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @Component({
   selector: 'app-login',
@@ -25,12 +30,18 @@ export class LoginPage implements OnInit {
   // {
   //   this.router.navigate(['/tabs/home'])
   // }
+
+  static current_email : any;
+
   async logIn() 
   {
     try 
     {
       const user = await this.ngFireAuth.signInWithEmailAndPassword(this.user.email, this.user.password);
       console.log(user);
+      LoginPage.current_email = this.user.email;
+      console.log(LoginPage.current_email)
+
       if (user.user?.email) 
       {
         this.router.navigate (['/tabs/home']);
@@ -63,7 +74,9 @@ export class LoginPage implements OnInit {
     {
       const user = await this.ngFireAuth.createUserWithEmailAndPassword(this.user.email, this.user.password);
       console.log(user);
-  
+      LoginPage.current_email = this.user.email;
+      console.log(LoginPage.current_email)
+
       if (user && user.user?.email) 
       {
         alert('registration successful!');

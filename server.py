@@ -33,6 +33,7 @@ def user_calorie_goal():
 
 @app.route('/calculate_rec_restaurant', methods=['GET', 'OPTIONS'])
 def calculate_rec_restaurant():
+    email = request.args['email'] 
     restaurents = curr_user
     temp = sorted(restaurents, key=lambda x:x['restaurant preference'], reverse=True)
     recs = []
@@ -61,6 +62,8 @@ def calculate_calories():
 
 @app.route('/calculate_rec_food', methods=['GET', 'OPTIONS'])
 def calculate_rec_food():
+    email = request.args['email'] 
+    print(email, "abc")
     print('3333',request.args['restaurant'], ast.literal_eval(request.args['foods']))
     curr_restaurant = request.args['restaurant']
     curr_foods = ast.literal_eval(request.args['foods'])
@@ -185,13 +188,18 @@ def LoadUserData():
                         print(j['food preference'])
 
         print(data)
-        fileInfo = json.dumps(data)
+        fileInfo = json.dumps(data, default=set_default)
         with open('userdata.json', 'w') as file:
              file.write(fileInfo)
     
 
     
     return jsonify({'received': 'true'})
+
+def set_default(obj):
+    if isinstance(obj, set):
+        return list(obj)
+    raise TypeError
 
 if __name__ == '__main__':
     # db = pymysql.connect(host = 'database-1.cmi1bapx4gep.us-east-2.rds.amazonaws.com', user = 'admin', password = '12345678')

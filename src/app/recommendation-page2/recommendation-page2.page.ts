@@ -4,6 +4,7 @@ import { UserService } from '../api/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ModalController, NavController, Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
+import { LoginPage } from '../login/login.page';
 
 @Component({
   selector: 'app-recommendation-page2',
@@ -108,9 +109,11 @@ export class RecommendationPage2Page implements OnInit {
   }
 
   load_restaurant() {
+    var str1 = '?email=';
+    var str2 = str1.concat(String(LoginPage.current_email));
 
     //this.restaurants = [1,2,3]
-    this.userService.LoadRecommendationRestaurant().subscribe((return_data) => {
+    this.userService.LoadRecommendationRestaurant(str2).subscribe((return_data) => {
       console.log(return_data);
       console.log('Recommendation restaurant load');
       this.restaurants = return_data
@@ -130,7 +133,13 @@ export class RecommendationPage2Page implements OnInit {
     var str4 = str3.concat(JSON.stringify(RecommendationPage2Page.curr_foods))
     console.log(str4)
     var str5 = str1.concat(str2)
+
+    var str6 = '&email=';
+    var str7 = str6.concat(String(LoginPage.current_email));
+
     this.temp = str5.concat(str4)
+    this.temp = this.temp.concat(str7);
+
     console.log(this.temp)
     var dataToSend = {
       data: "sending"};
@@ -143,12 +152,18 @@ export class RecommendationPage2Page implements OnInit {
   }
 
   load_food2() {
+    console.log(LoginPage.current_email, "abc")
     var str1 = '?restaurant='
     var str2 =  String(this.restaurant_form.get('name')?.value)
     var str3 = '&foods='
     var str4 = str3.concat(JSON.stringify(RecommendationPage2Page.curr_foods))
     var str5 = str1.concat(str2)
+    var str6 = '&email=';
+    var str7 = str6.concat(String(LoginPage.current_email));
+
     this.temp = str5.concat(str4)
+    this.temp = this.temp.concat(str7);
+    
     console.log(this.temp)
     var dataToSend = {
       data: "sending"};

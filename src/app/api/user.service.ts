@@ -61,7 +61,7 @@ export class UserService {
     return this.http.post(url, dataToSend, {headers: headers});
   }
 
-  LoadRecommendationRestaurant()
+  LoadRecommendationRestaurant(str2 : any)
   {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
@@ -70,7 +70,8 @@ export class UserService {
     // headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT');
     // headers.append('Access-Control-Allow-Credentials', 'true');
     var url = "http://127.0.0.1:3000/calculate_rec_restaurant";
-    return this.http.get(url, {headers: headers});
+    var url2 = url.concat(str2);
+    return this.http.get(url2, {headers: headers});
   }
 
   LoadRecommendationFood(dataToSend: any)

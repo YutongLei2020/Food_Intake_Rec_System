@@ -103,6 +103,7 @@ export class SurveyPage {
     console.log(this.registrationForm.value);
   }
 
+
   SaveData()
   {
     let full_name = this.registrationForm.get("full_name")?.value;
@@ -189,4 +190,5 @@ export class SurveyPage {
     "sushi" ,"salad", "drinks", "soda", "shakes", "Lamb", "pork", "shrimp", "spicy", "thai food",
     "asian food", "vietnamese", "alcohol", "egg", "dairy"];
   
+    
 }
