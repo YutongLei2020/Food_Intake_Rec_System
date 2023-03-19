@@ -20,8 +20,8 @@ export class SurveyPage {
   get gender() {
     return this.registrationForm.get('gender');
   }
-  get birthday() {
-    return this.registrationForm.get('birthday');
+  get age() {
+    return this.registrationForm.get('age');
   }
   get height() {
     return this.registrationForm.get('height');
@@ -48,33 +48,37 @@ export class SurveyPage {
   dataFromService:any="";
   registrationForm = this.formBuilder.group({
     full_name: ['', [Validators.required, Validators.maxLength(100)]],
-    // gender: ['', [Validators.required, Validators.maxLength(100)]],
-    // birthday: ['', [Validators.required, Validators.maxLength(100)]],
-    // height: [
-    //   '',
-    //   [
-    //     Validators.required,
-    //     Validators.pattern('^[0-9]{1,3}$')
-    //   ]
-    // ],
-    // weight: [
-    //   '',
-    //   [
-    //     Validators.required,
-    //     Validators.pattern('^[0-9]{1,3}$')
-    //   ]
-    // ],
-    // email: [
-    //   '',
-    //   [
-    //     Validators.required,
-    //     Validators.pattern('^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$')
-    //   ]
-    // ],
-    // telephone: ['', [Validators.required, Validators.maxLength(100)]],
-    // food_preference: ['', [Validators.required, Validators.maxLength(100)]],
-    // calories: ['', [Validators.required, Validators.maxLength(100)]],
-    // use_Recommendation: ['', [Validators.required, Validators.maxLength(100)]] //???
+    gender: ['', [Validators.required, Validators.maxLength(100)]],
+    age: ['', [Validators.required, Validators.maxLength(100)]],
+    height: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[0-9]{1,3}$')
+      ]
+    ],
+    weight: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[0-9]{1,3}$')
+      ]
+    ],
+    email: [
+      '',
+      [
+        // Validators.required,
+        Validators.pattern('^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$')
+      ]
+    ],
+    telephone: ['', [
+      // Validators.required, 
+      Validators.maxLength(100)]],
+    food_preference: ['', [
+      // Validators.required,
+       Validators.maxLength(100)]],
+    calories: ['', [Validators.maxLength(100)]],
+    use_Recommendation: ['', [Validators.maxLength(100)]] 
   });
 
 
@@ -86,10 +90,10 @@ export class SurveyPage {
     this.router.navigate(['/tabs/profile'])
   }
 
-  openProfile()
-  {
-    this.router.navigate(['/tabs/profile'])
-  }
+  // openProfile()
+  // {
+  //   this.router.navigate(['/tabs/profile'])
+  // }
 
   public submit() {
     console.log(this.registrationForm.value);
@@ -99,7 +103,7 @@ export class SurveyPage {
   {
     let full_name = this.registrationForm.get("full_name")?.value;
     let gender = this.registrationForm.get("gender")?.value;
-    let birthday = this.registrationForm.get("birthday")?.value;
+    let age = this.registrationForm.get("age")?.value;
     let height = this.registrationForm.get("height")?.value;
     let weight = this.registrationForm.get("weight")?.value;
     let email = this.registrationForm.get("email")?.value;
@@ -108,35 +112,72 @@ export class SurveyPage {
     let calories = this.registrationForm.get("calories")?.value;
     let use_Recommendation = this.registrationForm.get("use_Recommendation")?.value;
 
+    // let return_calories;
+    // if(use_Recommendation)
+    //   return_calories = this.goal_calories;
+    // else
+    //   return_calories = calories;
+    
+    // console.log(full_name);
+    // console.log("full_name");
+
+    // console.log(this.registrationForm.get("use_Recommendation")?.value);
+    // console.log("this.registrationForm.get(use_Recommendation)?.value");
+  
+
+    // console.log(use_Recommendation);
+    // console.log("use_Recommendation");
+  
+    // console.log(return_calories);
+    // console.log("return_calories");
 
     var dataToSend = {
       full_name: full_name, 
-      // gender: gender, 
-      // birthday: birthday, 
-      // height: height, 
-      // weight: weight, 
-      // email: email, 
-      // telephone: telephone, 
-      // food_preference: food_preference,
-      // calories: calories, 
-      // use_Recommendation: use_Recommendation
+      gender: gender, 
+      age: age, 
+      height: height, 
+      weight: weight, 
+      email: email, 
+      telephone: telephone, 
+      food_preference: food_preference,
+      // return_calories: return_calories, 
+      use_Recommendation: use_Recommendation
     };
+    console.log(dataToSend);
+    console.log("dataToSend");
       
       this.userService.Savedata(dataToSend).subscribe((response) => {
         console.log(response);
         console.log('Load user data');
 
-        this.navCtrl.navigateForward('LoadUserData'); 
+        // this.navCtrl.navigateForward('LoadUserData'); 
       });
 
-      // this.userService.LoadRecommendationRestaurant().subscribe((return_data) => {
-      //   console.log(return_data);
-      //   console.log('Recommendation restaurant load');
-      //   this.restaurants = return_data
-      //   this.r_display = JSON.stringify(this.restaurants)
-      //   console.log(this.r_display)
-      //   console.log(JSON.stringify(RecommendationPage2Page.curr_foods))
-      // });
+      this.router.navigate(['/tabs/home'])
   }
+  
+  goal_calories: any;
+  display_recommendation()
+  {
+    let gender = this.registrationForm.get("gender")?.value;
+    let age = this.registrationForm.get("age")?.value;
+    let height = this.registrationForm.get("height")?.value;
+    let weight = this.registrationForm.get("weight")?.value;
+
+    if(gender == "Male")
+      this.goal_calories = 66.5 + 13.8 * Number(weight) + 5 * Number(height) - 6.8 * Number(age); 
+    else if (gender == "Female")
+      this.goal_calories = 655 + 9.6 * Number(weight) + 1.9 * Number(height) - 4.7 * Number(age); 
+    else
+    {
+      let male_calories = 66.5 + 13.8 * Number(weight) + 5 * Number(height) - 6.8 * Number(age); 
+      let female_calories = 655 + 9.6 * Number(weight) + 1.9 * Number(height) - 4.7 * Number(age); 
+      
+      this.goal_calories = (male_calories + female_calories)/2 // (default as average from male and female)
+    }
+
+    console.log(this.goal_calories, "abd");
+  }
+
   
 }

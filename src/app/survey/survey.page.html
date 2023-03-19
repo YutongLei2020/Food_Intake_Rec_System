@@ -24,13 +24,13 @@
       </ion-item>
 
 
-    </ion-list> 
+    <!-- </ion-list> 
     <div id="button">
       <ion-button [disabled]="!registrationForm.valid" (click)="SaveData()" type="submit">Submit 
-        <!-- <ion-icon slot="end" name="create"> </ion-icon> -->
+        <ion-icon slot="end" name="create"> </ion-icon>
       </ion-button>
     </div>
-  </form>
+  </form> -->
 
     
 
@@ -38,12 +38,25 @@
       <!-- <ion-item>
         <ion-label>Gender: </ion-label>
         <ion-input autocapitalize inputmode="text" formControlName="gender" placeholder="Male/Female/Others"></ion-input>
+      </ion-item> -->
+      <ion-item>Gender:
+        <ion-select formControlName="gender" placeholder="Select Gender">
+          <ion-select-option>Male</ion-select-option>
+          <ion-select-option>Female</ion-select-option>
+          <ion-select-option>Non-binary/non-conforming</ion-select-option>
+          <ion-select-option>Prefer not to respond</ion-select-option>
+        </ion-select>
       </ion-item>
 
-      <ion-item>
+      <!-- <ion-item>
         <ion-label>Birthday: </ion-label>
         <ion-input autocapitalize inputmode="text" formControlName="birthday" placeholder="year-month-day (e.g. 2000-01-12)"></ion-input>
-      </ion-item>
+      </ion-item> -->
+
+      <ion-item>
+        <ion-label>Age: </ion-label>
+        <ion-input autocapitalize inputmode="text" formControlName="age" placeholder="(e.g 18)"></ion-input>
+      </ion-item> 
 
       <ion-item>
         <ion-label>Height: </ion-label>
@@ -54,7 +67,7 @@
       <ion-item>
         <ion-label>Weight: </ion-label>
         <ion-input autocapitalize inputmode="text" formControlName="weight"></ion-input>
-        <ion-label>lbs</ion-label>
+        <ion-label>kg</ion-label>
       </ion-item>
 
       <ion-item>
@@ -77,6 +90,9 @@
     
       <ion-card-content>
         <ion-item>
+          <!-- <ion-select style="width: 155px" interface="popover" placeholder="Food 1" formControlName="name" (ngSubmit)="submit2()">
+              <ion-select-option *ngFor="let f of foods">{{f}}</ion-select-option>
+            </ion-select> -->
           <ion-select placeholder="Select Food Preference" formControlName="food_preference" [multiple]="true">
             <ion-select-option>American Food</ion-select-option>
             <ion-select-option>Mexican Food</ion-select-option>
@@ -109,7 +125,7 @@
           <ion-label>Cal/Day</ion-label>
         </ion-item>
         <ion-item>    
-          <ion-checkbox slot="start" formControlName="use_Recommendation"></ion-checkbox>
+          <ion-checkbox slot="start"  (click)="display_recommendation()" ControlName="use_Recommendation"></ion-checkbox>
           <ion-label>Use Recommendation</ion-label>
         </ion-item>
       </ion-card-content>
@@ -120,7 +136,7 @@
       </ion-icon>
       </ion-button>
     </div>
-  </form> -->
+  </form>
 
 
   <br><br><br>
