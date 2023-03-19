@@ -77,8 +77,12 @@ export class SurveyPage {
     food_preference: ['', [
       // Validators.required,
        Validators.maxLength(100)]],
-    calories: ['', [Validators.maxLength(100)]],
-    use_Recommendation: ['', [Validators.maxLength(100)]] 
+    calories: ['', [
+      // Validators.required,
+      Validators.maxLength(100)]],
+    use_Recommendation: ['', [
+      Validators.required,
+      Validators.maxLength(100)]] 
   });
 
 
@@ -179,5 +183,10 @@ export class SurveyPage {
     console.log(this.goal_calories, "abd");
   }
 
+  foods_preference = ["chinese food", "mexican food", "American food", "japanese food", "korean food",
+   "fast food", "sat down restaurant", "to-go restaurant beef", "chicken", "fish", "vegetables",
+    "fruits", "dessert", "ice cream", "carbohydrates", "rice", "noodles", "bread", "pizza", "raw", 
+    "sushi" ,"salad", "drinks", "soda", "shakes", "Lamb", "pork", "shrimp", "spicy", "thai food",
+    "asian food", "vietnamese", "alcohol", "egg", "dairy"];
   
 }

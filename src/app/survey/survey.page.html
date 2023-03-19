@@ -94,23 +94,7 @@
               <ion-select-option *ngFor="let f of foods">{{f}}</ion-select-option>
             </ion-select> -->
           <ion-select placeholder="Select Food Preference" formControlName="food_preference" [multiple]="true">
-            <ion-select-option>American Food</ion-select-option>
-            <ion-select-option>Mexican Food</ion-select-option>
-            <ion-select-option>Chinese Food</ion-select-option>
-            <ion-select-option>Japanese Food</ion-select-option>
-            <ion-select-option>Thai Food</ion-select-option>
-            <ion-select-option>Korean Food</ion-select-option>
-            <ion-select-option>Vietnamese Food</ion-select-option>
-            <ion-select-option>French Food</ion-select-option>
-            <ion-select-option>Brunch</ion-select-option>
-            <ion-select-option>Fast Food</ion-select-option>
-            <ion-select-option>Raw Food</ion-select-option>
-            <ion-select-option>BBQ</ion-select-option>
-            <ion-select-option>Rice</ion-select-option>
-            <ion-select-option>Ramen</ion-select-option>
-            <ion-select-option>Sushi</ion-select-option>
-            <ion-select-option>Dim Sum</ion-select-option>
-            <ion-select-option>Guilin Rice Noodle</ion-select-option>
+            <ion-select-option *ngFor="let f of foods_preference">{{f}}</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-card-content>

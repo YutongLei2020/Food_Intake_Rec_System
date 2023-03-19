@@ -161,14 +161,36 @@ def LoadRecommendation():
 
 @app.route('/LoadUserData', methods=['POST', 'OPTIONS'])
 def LoadUserData(): 
+    restraurant = curr_user
     if request.method == 'POST':
         # print(request)
         data = request.get_data()
         data = json.loads(str(data)[2:-1])
+        data["restraurant"] = restraurant
+
+# curr_user = [{"restaurant name": "Mendocino Farms", "restaurant type": {"fast food", "american food"}, "restaurant address": "4175 Campus Dr, Irvine, CA 92612", "restaurant preference": 1000, "menu": [{"food_name": "Not So Fried Chicken", "tags":{"fast food", "american food", "meat", "chicken", "carbohydrates", "vegetables"}, "food preference": 1000, "calories": 1100},  {"food_name": "Sweet Heat Crispy Thai Chicken", "tags":{"fast food", "thai food", "meat", "chicken", "carbohydrates", "spicy", "vegetables"}, "food preference": 1000, "calories": 1100}, {"food_name": "Peruvian Steak", "tags":{"fast food", "american food", "meat", "beef", "vegetables", "carbohydrates"}, "food preference": 1000, "calories": 760},  {"food_name": "Vegan Banh Mi", "tags":{"fast food", "american food", "vegetables", "carbohydrates"}, "food preference": 1000, "calories": 650}, {"food_name": "Thai Mango Salad", "tags":{"fast food", "thai food", "vegetables", "fruits", "meat", "chicken", "salad"}, "food preference": 1000, "calories": 840}, {"food_name": "Pink Lady Beets & Goat Cheese Salad", "tags":{"fast food", "american food", "vegetables", "fruits", "salad"}, "food preference": 1000, "calories": 840}, {"food_name": "The Modern Caesar", "tags":{"fast food", "american food", "vegetables", "fruits"}, "food preference": 1000, "calories": 630}, {"food_name": "Mama Chen’s Chinese Chicken Salad", "tags":{"fast food", "chinese food", "vegetables", "meat", "chicken", "salad"}, "food preference": 1000, "calories": 650}, {"food_name": "Spicy Curried Couscous", "tags":{"fast food", "indian food", "vegetables", "spicy"}, "food preference": 1000, "calories": 360}, {"food_name": "Kale & Apple Rainbow Salad", "tags":{"fast food", "american food", "vegetables", "fruits", "salad"}, "food preference": 1000, "calories": 165}, {"food_name": "Basil Pesto Pasta Shells", "tags":{"fast food", "amaerican food", "vegetables", "carbohydrates"}, "food preference": 1000, "calories": 165} ]}
+# , {"restaurant name": "The Buffalo Spot", "restaurant type": {"korean food"}, "restaurant address": "4511 Campus Dr Suite 4511, Irvine, CA 92612", "restaurant preference": 1000, "menu":  [{"food_name": "Traditional Wings 5 Pieces", "tags":{"fast food", "american food", "meat", "chicken"}, "food preference": 1000, "calories": 840}, {"food_name": "Boneless Wings 5 Pieces", "tags":{"fast food", "american food", "meat", "chicken"}, "food preference": 1000, "calories": 360}, {"food_name": "Tenders 5 Pieces", "tags":{"fast food", "american food", "meat", "chicken"}, "food preference": 1000, "calories": 230}, {"food_name": "Traditional Wings 5 Pieces", "tags":{"fast food", "american food", "meat", "chicken"}, "food preference": 1000, "calories": 840}, {"food_name": "Cali Burrito", "tags":{"fast food", "american food", "meat", "chicken", "carbohydrates"}, "food preference": 1000, "calories": 870}, {"food_name": "Chicken Caesar Salad", "tags":{"fast food", "american food", "meat", "chicken", "vegetables", "salad"}, "food preference": 1000, "calories": 470}, {"food_name": "Buffalo Chicken Salad", "tags":{"fast food", "american food", "meat", "chicken", "vegetables", "salad"}, "food preference": 1000, "calories": 339}, {"food_name": "Side Salad", "tags":{"fast food", "american food", "vegetables", "salad"}, "food preference": 1000, "calories": 200}, {"food_name": "Nemo’s Strawberry Cake", "tags":{"fast food", "american food", "dessert", "cake", "fruits"}, "food preference": 1000, "calories": 390}, {"food_name": "Nemo’s Chocolate Cake", "tags":{"fast food", "american food", "dessert", "cake"}, "food preference": 1000, "calories": 390}, {"food_name": "Nemo’s BananaCake", "tags":{"fast food", "american food", "dessert", "cake", "fruits"}, "food preference": 1000, "calories": 390}, {"food_name": "Nemo’s Carrot Cake", "tags":{"fast food", "american food", "dessert", "cake", "vegetables"}, "food preference": 1000, "calories": 390}, {"food_name": "Breadsticks 2 Pieces", "tags":{"fast food", "american food", "carbohydrates", "bread"}, "food preference": 1000, "calories": 380} ]}
+# ]
+        for i in data["restraurant"]:
+            for j in i['restaurant type']: 
+                if j in data['food_preference']:
+                    temp = i['restaurant preference']
+                    i['restaurant preference'] += (2000 - temp) * 0.02
+                    print(i['restaurant preference'])
+            for j in i['menu']: 
+                for k in j['tags']: 
+                    if k in data['food_preference']: 
+                        temp = j['food preference']
+                        j['food preference'] += (2000 - temp) * 0.02
+                        print(j['food preference'])
+
         print(data)
         fileInfo = json.dumps(data)
         with open('userdata.json', 'w') as file:
              file.write(fileInfo)
+    
+
+    
     return jsonify({'received': 'true'})
 
 if __name__ == '__main__':
