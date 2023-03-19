@@ -13,6 +13,20 @@ export class UserService {
 
   constructor(public http:HttpClient) { }
 
+  Savedata(dataToSend : any)
+  {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000/survey');
+    headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+    var url = "http://127.0.0.1:3000/survey";
+
+    return this.http.post(url, dataToSend, {headers: headers});
+  }
+
+  
   //SaveFeedback(dataToSend: { restaurant: string; dishes: string[]; dishes_rate: number[]; date: string; rate: number; })
   SaveFeedback(dataToSend: any)
   {

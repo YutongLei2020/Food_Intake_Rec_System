@@ -8,12 +8,16 @@ import { SurveyPageRoutingModule } from './survey-routing.module';
 
 import { SurveyPage } from './survey.page';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SurveyPageRoutingModule
+    SurveyPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [SurveyPage]
 })

@@ -12,6 +12,8 @@
 
 <ion-content>
   <body>
+    <!-- <ion-datetime [value]="dateTime" displayFormat="MMM DD, YYYY HH:mm" ></ion-datetime> -->
+    <!-- <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="dateTime"></ion-datetime> -->
 
   <!-- https://ionicframework.com/docs/api/infinite-scroll -->
   <!-- back button needed? <ion-nav [root]="component"></ion-nav> -->
@@ -19,7 +21,6 @@
   <!-- discuss about the lunch/dinner design? -->
 
 
-  <form id="drag1">
     <!-- time drag down -->
     <ion-card>
       <ion-card-content>
@@ -44,67 +45,78 @@
         </ion-list>
       </div>
       <!-- restaurant drag down -->
-      <div id="restaurant">
-        <form [formGroup]="restaurant_form" (ngSubmit)="submit1()">
-          <label>Restaurant:</label>
-          <input list="restaurants" inputmode='text' formControlName="name">
-            <datalist id="restaurants">
-              <ion-list *ngFor="let r of restaurants">
-                <option value={{r}}></option>
-              </ion-list>
-            </datalist>
-        </form>
-        <ion-button [disabled]="!restaurant_form.valid" (click)="load_food()" type="submit">save</ion-button>
-      </div>
-      <div class="flex-container1" id="foodType1">
-        <div>
-          <form [formGroup]="food_form1" (ngSubmit)="submit2()">
-            <ion-list>
-              <ion-item>
-                <ion-select placeholder="Food 1" formControlName="name" (ngSubmit)="submit2()">
-                <!-- <ion-select placeholder="Food 1"> -->
-                  <ion-select-option *ngFor="let f of foods">{{f}}</ion-select-option>
-                </ion-select>
-              </ion-item>
+      <!-- <div class="flex-container1" id="restaurant"> -->
+      <form [formGroup]="restaurant_form" (ngSubmit)="submit1()">
+        <div class="flex-container1" id="restaurant">
+          <!-- <label>Restaurant:</label> -->
+          <input list="restaurants" inputmode='text' formControlName="name" placeholder="Restaurant Name">
+          <datalist id="restaurants">
+            <ion-list *ngFor="let r of restaurants">
+              <option value={{r}}></option>
             </ion-list>
+          </datalist>
+          <div id="submit1">
+            <ion-button [disabled]="!restaurant_form.valid" (click)="load_food()" type="submit">save</ion-button>
+          </div>
+        </div>
+      </form>
+      <!-- </div> -->
+
+      <!-- <div class="flex-container1" id="foodType1"> -->
+      <form [formGroup]="food_form1" (ngSubmit)="submit2()">
+        <div class="flex-container1" id="foodType1">
+          <ion-list>
+            <ion-item>
+              <ion-select style="width: 155px" interface="popover" placeholder="Food 1" formControlName="name" (ngSubmit)="submit2()">
+              <!-- <ion-select placeholder="Food 1"> -->
+                <ion-select-option *ngFor="let f of foods">{{f}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <div id="submit1">
             <ion-button [disabled]='!food_form1.valid' (click)="save_food1()" type="submit">
               save
             </ion-button>
-          </form>
+          </div>
         </div>
-        <div id="vegtag">
+      </form>
+        <!-- <div id="vegtag">
           <span class="veg">Vegetables</span>
-        </div>
-      </div>
+        </div> -->
 
-      <div class="flex-container2" id="foodType2">
-        <div>
-          <form [formGroup]="food_form2" (ngSubmit)="submit2()">
-            <ion-list>
-              <ion-item>
-                <ion-select placeholder="Food 2" formControlName="name">
-                  <ion-select-option *ngFor="let f of foods2">{{f}}</ion-select-option>
-                </ion-select>
-              </ion-item>
-            </ion-list>
-            <ion-button [disabled]='!food_form2.valid' (click)="save_food2()" type="submit">
-              save
-            </ion-button>
-          </form>
+      <form [formGroup]="food_form2" (ngSubmit)="submit2()">
+        <div class="flex-container2" id="foodType2">
+        <ion-list>
+          <ion-item>
+            <ion-select style="width: 155px" interface="popover" placeholder="Food 2" formControlName="name">
+              <ion-select-option *ngFor="let f of foods2">{{f}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <div id="submit1">
+          <ion-button [disabled]="!restaurant_form.valid" (click)="save_food2()" type="submit">save</ion-button>
         </div>
-        <div id="fruittag">
+        </div>
+      </form>
+        <!-- <div id="fruittag">
           <span class="fruit">Fruit</span>
-        </div>
-      </div>
+        </div> -->
 
     
       <br>
       </ion-card-content>
     </ion-card>
 
-
-    <!-- piechart missing -->
     <ion-card id="warning">
+      <ion-card-content>
+        <p>
+          Calories: {{local_calories}} cal
+        </p>
+      </ion-card-content>
+    </ion-card>
+    
+    <!-- piechart missing -->
+    <!-- <ion-card id="warning">
       <ion-card-content>
         <div id="warning1">
           <p>
@@ -123,8 +135,7 @@
         </div>
       </ion-card-content>
     </ion-card>
-  </form>
-  
+   -->
 
   <!-- <div id="warning1">
     <p>
@@ -138,11 +149,10 @@
 
   
   <div>
-
     <!-- button unfinished -->
-    <ion-button id="add">Add</ion-button>
-    <ion-button id="save">Save</ion-button>
+    <!-- <ion-button id="add">Add</ion-button> -->
+    <ion-button id="save" (click)="submit()">Submit</ion-button>
   </div>
   </body>
-
+  
 </ion-content>

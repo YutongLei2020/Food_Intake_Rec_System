@@ -52,6 +52,11 @@ export class RecommendationPage2Page implements OnInit {
     name: ['', [Validators.required]]
   })
 
+  submit()
+  {
+    this.router.navigate(['/tabs/home'])
+  }
+
   public submit1() {
     console.log(this.restaurant_form.value)
   }
@@ -60,7 +65,11 @@ export class RecommendationPage2Page implements OnInit {
     console.log('submit2 log')
   }
 
+  // dateTime = new Date();
   ngOnInit() {
+    // setTimeout(() => {
+    //   this.dateTime;
+    // });
   }
     
   back()
@@ -150,7 +159,8 @@ export class RecommendationPage2Page implements OnInit {
       //this.recs_names = this.recs_names['dishes']
     });
 
-}
+  }
+
 }
 
 export var curr_rec = RecommendationPage2Page.curr_restaurant

@@ -12,15 +12,15 @@
       </ion-avatar>
   
       <ion-item id="username">
-        <ion-input placeholder="username"></ion-input>
+        <ion-input [(ngModel)]="user.email" placeholder="username"></ion-input>
       </ion-item>
 
       <ion-item id="password">
-        <ion-input placeholder="password" type="password"></ion-input>
+        <ion-input [(ngModel)]="user.password" placeholder="password" type="password"></ion-input>
       </ion-item>
 
       <ion-button id="bnLogIn" (click)="logIn()">log in</ion-button>
-      <ion-button id="bnSignUp">sign up</ion-button>
+      <ion-button id="bnSignUp" (click)="signUp()">sign up</ion-button>
     </ion-card>
   </body>
 </ion-content>

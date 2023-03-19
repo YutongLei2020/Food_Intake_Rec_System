@@ -21,8 +21,14 @@ option{
 }
 
 #restaurant{
-  margin-top: 7%;
+  margin-top: 10%;
 }
+#submit1 {
+  margin-top: -2%;
+  margin-left: 70px;
+}
+
+
 
 .label {
   color: white;
@@ -65,7 +71,7 @@ option{
 }
 
 #warning {
-  height: 200px;
+  height: auto;
 }
 
 #warning1 {
@@ -91,6 +97,9 @@ option{
 
 
 #save{
-  margin-left: 40%;
+  // margin-left: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
   
+

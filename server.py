@@ -159,6 +159,13 @@ def LoadRecommendation():
         recs['dishes'] = ['double burger', 'cheese fries', 'coke']
     return jsonify({'received': 'true'})
 
+@app.route('/LoadUserData', methods=['POST', 'OPTIONS'])
+def LoadUserData(): #???
+    # if request.method == 'POST':
+    data = request.get_data()
+    data = json.loads(str(data)[2:-1])
+    print(data)
+
 if __name__ == '__main__':
     # db = pymysql.connect(host = 'database-1.cmi1bapx4gep.us-east-2.rds.amazonaws.com', user = 'admin', password = '12345678')
     # cursor = db.cursor()

@@ -20,7 +20,11 @@ export class ProfilePage implements OnInit {
 
   logOut()
   {
-    this.router.navigate([''])
+    // this.router.navigate([''])
+    this.router.navigateByUrl('')
+        .then(() => {
+          window.location.reload();
+        });
   }
 
 }
