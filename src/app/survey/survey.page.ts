@@ -117,11 +117,11 @@ export class SurveyPage {
     let calories = this.registrationForm.get("calories")?.value;
     let use_Recommendation = this.registrationForm.get("use_Recommendation")?.value;
 
-    // let return_calories;
-    // if(use_Recommendation)
-    //   return_calories = this.goal_calories;
-    // else
-    //   return_calories = calories;
+    let return_calories;
+    if(use_Recommendation)
+      return_calories = this.goal_calories;
+    else
+      return_calories = calories;
     
     // console.log(full_name);
     // console.log("full_name");
@@ -145,7 +145,7 @@ export class SurveyPage {
       email: email, 
       telephone: telephone, 
       food_preference: food_preference,
-      // return_calories: return_calories, 
+      return_calories: return_calories, 
       use_Recommendation: use_Recommendation
     };
     console.log(dataToSend);

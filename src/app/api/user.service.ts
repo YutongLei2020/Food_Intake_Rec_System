@@ -74,6 +74,19 @@ export class UserService {
     return this.http.get(url2, {headers: headers});
   }
 
+  LoadGoal(str2 : any)
+  {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    // headers.append('Access-Control-Allow-Origin', 'http://localhost:3000/LoadRecommendation');
+    // headers.append('Access-Control-Allow-Methods', 'GET, POST, PUT');
+    // headers.append('Access-Control-Allow-Credentials', 'true');
+    var url = "http://127.0.0.1:3000/LoadGoal";
+    var url2 = url.concat(str2);
+    return this.http.get(url2, {headers: headers});
+  }
+
   LoadRecommendationFood(dataToSend: any)
   {
     let headers = new HttpHeaders();

@@ -4,6 +4,8 @@ import { UserService } from '../api/user.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ModalController, NavController, Platform } from '@ionic/angular';
 import { RecommendationPage2Page } from '../recommendation-page2/recommendation-page2.page';
+import { LoginPage } from '../login/login.page';
+
 
 
 @Component({
@@ -91,7 +93,8 @@ export class ConfirmationPage implements OnInit {
   //storeFeedback() 
   storeFeedback()
   {
-    let restaurant = RecommendationPage2Page.curr_restaurant
+    let user = LoginPage.current_email;
+    let restaurant = RecommendationPage2Page.curr_restaurant;
     let dish1: string = RecommendationPage2Page.curr_foods[0];
     let dish2: string = RecommendationPage2Page.curr_foods[1];
     let dish1_rate: number = Number(this.food_form1.get('rate')?.value);
@@ -99,6 +102,7 @@ export class ConfirmationPage implements OnInit {
     let date = '3/11/2021'
     let rate = Number(this.restaurant_form.get('rate')?.value);
     var dataToSend = {
+      user: user,
       restaurant: restaurant,
       dish1: dish1,
       dish2: dish2,

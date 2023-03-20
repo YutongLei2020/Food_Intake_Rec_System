@@ -15,11 +15,12 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
 //import { RecsComponent } from './recs/recs.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, ReactiveFormsModule, AngularFireModule.initializeApp(environment.firebase), AngularFireAuthModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HttpClient, FormBuilder],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, HttpClient, FormBuilder, DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
