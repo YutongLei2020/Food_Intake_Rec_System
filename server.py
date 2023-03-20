@@ -198,6 +198,7 @@ def LoadGoal():
     with open('userdata.json', 'r') as file:
             json_data = file.read()
     user_db = json.loads(json_data)
+    print(len(user_db))
     email = request.args['email'] 
     user = {}
     for i in user_db:
