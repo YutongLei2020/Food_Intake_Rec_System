@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { LoginPage } from '../login/login.page';
 
 @Component({
   selector: 'app-profile',
@@ -26,5 +27,9 @@ export class ProfilePage implements OnInit {
           window.location.reload();
         });
   }
+
+  // email = LoginPage.current_email;
+  email = "abca@abc.com";
+  // email = "abcabcabcabcbcabcabcabcabcbc.com"
 
 }
