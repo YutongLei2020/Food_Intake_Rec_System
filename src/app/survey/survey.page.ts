@@ -80,7 +80,7 @@ export class SurveyPage {
     calories: ['', [
       // Validators.required,
       Validators.maxLength(100)]],
-    use_Recommendation: ['', [
+    use_Recommendation: [false, [
       Validators.required,
       Validators.maxLength(100)]] 
   });
@@ -93,11 +93,6 @@ export class SurveyPage {
   {
     this.router.navigate(['/tabs/profile'])
   }
-
-  // openProfile()
-  // {
-  //   this.router.navigate(['/tabs/profile'])
-  // }
 
   public submit() {
     console.log(this.registrationForm.value);
@@ -123,18 +118,6 @@ export class SurveyPage {
     else
       return_calories = calories;
     
-    // console.log(full_name);
-    // console.log("full_name");
-
-    // console.log(this.registrationForm.get("use_Recommendation")?.value);
-    // console.log("this.registrationForm.get(use_Recommendation)?.value");
-  
-
-    // console.log(use_Recommendation);
-    // console.log("use_Recommendation");
-  
-    // console.log(return_calories);
-    // console.log("return_calories");
 
     var dataToSend = {
       full_name: full_name, 
@@ -154,16 +137,15 @@ export class SurveyPage {
       this.userService.Savedata(dataToSend).subscribe((response) => {
         console.log(response);
         console.log('Load user data');
-
-        // this.navCtrl.navigateForward('LoadUserData'); 
       });
 
       this.router.navigate(['/tabs/home'])
   }
   
-  goal_calories: any;
+  goal_calories = 0;
   display_recommendation()
   {
+    
     let gender = this.registrationForm.get("gender")?.value;
     let age = this.registrationForm.get("age")?.value;
     let height = this.registrationForm.get("height")?.value;
